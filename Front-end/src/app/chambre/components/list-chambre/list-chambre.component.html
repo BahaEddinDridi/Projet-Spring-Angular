@@ -1,0 +1,25 @@
+<div>
+  <h2>List des Chambres</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Numero de la chambre</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let chambre of chambres">
+        <td>{{ chambre.idChambre }}</td>
+        <td>{{ chambre.numChambre }}</td>
+        <td>{{ chambre.typeC }}</td>
+        <td class="button-container">
+            <button class="edit-button" [routerLink]="['/addChambre', { edit: true, chambre: stringifyChambre(chambre) }]">Modifier</button>
+            <button class="delete-button" (click)="deleteChambre(chambre)" >Supprimer</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="add-button" [routerLink]="['addChambre']">Ajouter Chambre</button>
+</div>

@@ -1,0 +1,33 @@
+<div class="add-chambre-container">
+  <h2>{{ isEdit ? 'Modifier' : 'Ajouter' }} une Chambre</h2>
+
+  <div *ngIf="isChambreAdded; else chambreForm" class="success-message">
+    <p>Chambre {{ isEdit ? 'Modifiée' : 'Ajoutée' }} avec succès!</p>
+  </div>
+
+  <ng-template #chambreForm>
+    <form (submit)="addChambre()" class="chambre-form">
+      <div class="form-group">
+        <label for="numChambre">Numéro de la chambre:</label>
+        <input
+          type="number"
+          id="numChambre"
+          name="numChambre"
+          [(ngModel)]="newChambre.numChambre"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="typeC">Type de chambre:</label>
+        <select id="typeC" name="typeC" [(ngModel)]="newChambre.typeC" required>
+          <option value="SINGLE">SINGLE</option>
+          <option value="DOUBLE">DOUBLE</option>
+          <option value="TRIPLE">TRIPLE</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-button">{{ getButtonLabel() }}</button>
+    </form>
+  </ng-template>
+</div>

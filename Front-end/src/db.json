@@ -1,0 +1,20 @@
+
+{
+"chambres": [
+    {
+      "idChambre": 1,
+      "numChambre": 101,
+      "typeC": "SINGLE"
+    },
+    {
+      "idChambre": 2,
+      "numChambre": 102,
+      "typeC": "DOUBLE"
+    },
+    {
+      "idChambre": 3,
+      "numChambre": 103,
+      "typeC": "TRIPLE"
+    }
+  ]
+}
