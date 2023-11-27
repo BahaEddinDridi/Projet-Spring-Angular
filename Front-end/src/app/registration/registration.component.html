@@ -1,0 +1,39 @@
+<!-- registration.component.html -->
+
+<section class="background-radial-gradient overflow-hidden">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <h2 class="mb-4 text-center">User Registration</h2>
+            <form (submit)="registerUser()" #registrationForm="ngForm">
+              <div class="mb-3">
+                <label class="form-label">Name:</label>
+                <input type="text" id="name" name="name" [(ngModel)]="user.name" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email:</label>
+                <input type="email" id="email" name="email" [(ngModel)]="user.email" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password:</label>
+                <input type="password" id="password" name="password" [(ngModel)]="user.password" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Roles</label>
+                <input class="form-control" type="text" name="roles" [(ngModel)]="user.roles">
+              </div>
+              <!-- Add additional fields for id and roles if needed -->
+              <button type="submit" class="btn btn-primary btn-block" [disabled]="!registrationForm.valid">Register</button>
+            </form>
+            <p class="text-center mt-3">Already have an account? <a [routerLink]="['/login']">Login</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
